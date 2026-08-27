@@ -18,9 +18,9 @@ resource "google_compute_instance" "jenkins" {
   }
 
   scheduling {
-    provisioning_model = "SPOT"
-    preemptible        = true
-    automatic_restart  = false
+    provisioning_model = "STANDARD"
+    preemptible        = false
+    automatic_restart  = true
   }
 
   boot_disk {
