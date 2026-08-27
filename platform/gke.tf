@@ -2,7 +2,7 @@
 resource "google_container_cluster" "lab" {
   name     = "lab"
   location = var.zone                  # zonal — free-tier cluster fee
-  network  = "default"
+  nethetwork  = "default"
 
   remove_default_node_pool = true
   initial_node_count       = 1
