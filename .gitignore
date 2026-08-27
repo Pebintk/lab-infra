@@ -1,5 +1,13 @@
+# Terraform local state / plugin cache
+**/.terraform/
 *.tfstate
 *.tfstate.*
-.terraform/
-.terraform.lock.hcl.bak
 crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+*.tfvars.json
+.terraformrc
+terraform.rc
