@@ -1,7 +1,7 @@
 # platform/main.tf
 resource "google_container_cluster" "lab" {
   name     = "lab"
-  location = var.zone                  # zonal — free-tier cluster fee
+  location = var.zone # zonal — free-tier cluster fee
   network  = "default"
 
   remove_default_node_pool = true
@@ -11,13 +11,13 @@ resource "google_container_cluster" "lab" {
   workload_identity_config {
     workload_pool = "${var.project_id}.svc.id.goog"
   }
-  logging_config    { enable_components = ["SYSTEM_COMPONENTS"] }
+  logging_config { enable_components = ["SYSTEM_COMPONENTS"] }
   monitoring_config { enable_components = ["SYSTEM_COMPONENTS"] }
 }
 
 resource "google_container_node_pool" "spot" {
-  name    = "spot-pool"
-  cluster = google_container_cluster.lab.name
+  name     = "spot-pool"
+  cluster  = google_container_cluster.lab.name
   location = var.zone
 
   autoscaling {
